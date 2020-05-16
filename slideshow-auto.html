@@ -1,0 +1,49 @@
+<style>
+  #slideshow {
+    overflow: hidden;
+    width: 700px;
+    margin: 0 auto;
+  }
+
+  .container {
+    width: 3500px;
+    animation: slide 25s ease infinite;
+  }
+
+  .slide {
+    float: left;
+    width: 700px;
+    color: white;
+    padding: 200px 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+    text-align: center;
+  }
+  .slide:nth-child(odd) {
+    background: #D93B65;
+  }
+  .slide:nth-child(even) {
+    background: #037E8C;
+  }
+  @keyframes slide {
+    16% {margin-left: 0px;}
+    20% {margin-left: -700px;}
+    36% {margin-left: -700px;}
+    40% {margin-left: -1400px;}
+    56% {margin-left: -1400px;}
+    60% {margin-left: -2100px;}
+    76% {margin-left: -2100px;}
+    80% {margin-left: -2800px;}
+    96% {margin-left: -2800px;}
+  }
+
+</style>
+<div id="slideshow">
+  <div class="container">
+    <div class="slide">1</div>
+    <div class="slide">2</div>
+    <div class="slide">3</div>
+    <div class="slide">4</div>
+    <div class="slide">5</div>
+  </div>
+</div>
