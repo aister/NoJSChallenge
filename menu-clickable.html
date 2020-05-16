@@ -1,0 +1,47 @@
+<style>
+  #menuContainer {
+    user-select: none;
+    position: relative;
+    float: right;
+  }
+  #menuToggle {
+    padding: 10px 50px;
+    text-align: center;
+    border: 1px solid black;
+    display: inline-block;
+  }
+  #menuMain {
+    transform: scaleY(0);
+    margin-top: -1px;
+    padding: 0px;
+    width: 200px;
+    border: 1px solid black;
+    position: absolute;
+    right: 0;
+    transition: transform 1s ease;
+    transform-origin: top;
+  }
+  #menuCheck {
+    display: none;
+  }
+  #menuCheck:checked + #menuMain {
+    transform: scaleY(1);
+  }
+  #menuMain li {
+    list-style: none;
+    padding: 10px;
+  }
+  #menuToggle:hover, #menuMain li:hover {
+    background: #d4d4d4;
+  }
+</style>
+<div id="menuContainer">
+  <label id="menuToggle" for="menuCheck">Menu</label>
+  <input type="checkbox" id="menuCheck">
+  <ul id="menuMain">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ul>
+</div>
