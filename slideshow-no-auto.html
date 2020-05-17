@@ -12,7 +12,7 @@
   .slider {
     left: 0;
     position: absolute;
-    transition: left 2s ease;
+    transition: left 1s ease;
     display: flex;
   }
   .slide {
@@ -38,42 +38,57 @@
   .main input {
     display: none;
   }
-  #slideRadio1:checked + #slideRadio2 + #slideRadio3 + #slideRadio4 + #slideRadio5 + div > div {
-    left: 0;
-  }
-  #slideRadio1:checked + #slideRadio2 + #slideRadio3 + #slideRadio4 + #slideRadio5 + div + div > #slideLabel1 {
+  #slideRadio1:checked ~ .slide-container > .slider { left: 0; }
+  #slideRadio2:checked ~ .slide-container > .slider { left: -600px; }
+  #slideRadio3:checked ~ .slide-container > .slider { left: -1200px; }
+  #slideRadio4:checked ~ .slide-container > .slider { left: -1800px; }
+  #slideRadio5:checked ~ .slide-container > .slider { left: -2400px; }
+  #slideRadio1:checked ~ .radioContainer > #slideLabel1,
+  #slideRadio2:checked ~ .radioContainer > #slideLabel2,
+  #slideRadio3:checked ~ .radioContainer > #slideLabel3,
+  #slideRadio4:checked ~ .radioContainer > #slideLabel4,
+  #slideRadio5:checked ~ .radioContainer > #slideLabel5 {
     padding: 2px 20px;
     background: #797979;
   }
-  #slideRadio2:checked + #slideRadio3 + #slideRadio4 + #slideRadio5 + div > div {
-    left: -600px;
+  #slideRadio1:checked ~ .navContainer > .slideNav1,
+  #slideRadio2:checked ~ .navContainer > .slideNav2,
+  #slideRadio3:checked ~ .navContainer > .slideNav3,
+  #slideRadio4:checked ~ .navContainer > .slideNav4, 
+  #slideRadio5:checked ~ .navContainer > .slideNav5 {
+    display: flex;
   }
-  #slideRadio2:checked + #slideRadio3 + #slideRadio4 + #slideRadio5 + div + div > #slideLabel2 {
-    padding: 2px 20px;
-    background: #797979;
+  .back label {
+    width: 0; 
+    height: 0; 
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent; 
+    border-right: 20px solid #6f6f6f;
   }
-  #slideRadio3:checked + #slideRadio4 + #slideRadio5 + div > div {
-    left: -1200px;
+  .next label {
+    width: 0; 
+    height: 0; 
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid #6f6f6f;
   }
-  #slideRadio3:checked + #slideRadio4 + #slideRadio5 + div + div > #slideLabel3 {
-    padding: 2px 20px;
-    background: #797979;
+  .back, .next {
+    position: absolute;
+    top: 0;
+    height: 300px;
+    align-items: center;
+    padding: 0 10px;
   }
-  #slideRadio4:checked + #slideRadio5 + div > div {
-    left: -1800px;
+  .back {
+    left: -40px;
   }
-  #slideRadio4:checked + #slideRadio5 + div + div > #slideLabel4 {
-    padding: 2px 20px;
-    background: #797979;
+  .next {
+    right: -40px;
   }
-  #slideRadio5:checked + div > div {
-    left: -2400px;
+  .navContainer > div {
+    display: none;
   }
-  #slideRadio5:checked + div + div > #slideLabel5 {
-    padding: 2px 20px;
-    background: #797979;
-  }
-  .main label {
+  .radioContainer label {
     border-radius: 2px;
     color: white;
     margin: 10px 5px;
@@ -83,7 +98,7 @@
     float: left;
     transition: all 1s ease;
   }
-  .labelContainer {
+  .radioContainer {
     width: 170px;
     margin: 0 auto;
   }
@@ -105,11 +120,23 @@
     <div class="slideNav">
     </div>
   </div>
-  <div class="labelContainer">
+  <div class="radioContainer">
     <label id="slideLabel1" for="slideRadio1"></label>
     <label id="slideLabel2" for="slideRadio2"></label>
     <label id="slideLabel3" for="slideRadio3"></label>
     <label id="slideLabel4" for="slideRadio4"></label>
     <label id="slideLabel5" for="slideRadio5"></label>
+  </div>
+  <div class="navContainer">
+    <div class="slideNav1 next"><label for="slideRadio2"></label></div>
+    <div class="slideNav1 back"><label for="slideRadio5"></label></div>
+    <div class="slideNav2 next"><label for="slideRadio3"></label></div>
+    <div class="slideNav2 back"><label for="slideRadio1"></label></div>
+    <div class="slideNav3 next"><label for="slideRadio4"></label></div>
+    <div class="slideNav3 back"><label for="slideRadio2"></label></div>
+    <div class="slideNav4 next"><label for="slideRadio5"></label></div>
+    <div class="slideNav4 back"><label for="slideRadio3"></label></div>
+    <div class="slideNav5 next"><label for="slideRadio1"></label></div>
+    <div class="slideNav5 back"><label for="slideRadio4"></label></div>
   </div>
 </div>
