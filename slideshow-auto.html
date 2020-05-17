@@ -1,15 +1,25 @@
 <style>
+  #main {
+    position: relative;
+    width: 700px;
+    margin: 0 auto;
+  }
   #slideshow {
     overflow: hidden;
     width: 700px;
-    margin: 0 auto;
   }
 
   .container {
     width: 3500px;
-    animation: slide 25s ease infinite;
   }
-
+  #main input {
+    display: none;
+  }
+  #slideRadio1:checked ~ #slideshow > .container { animation: slideA 25s ease infinite; }
+  #slideRadio2:checked ~ #slideshow > .container { animation: slideB 25s ease infinite; }
+  #slideRadio3:checked ~ #slideshow > .container { animation: slideC 25s ease infinite }
+  #slideRadio4:checked ~ #slideshow > .container { animation: slideD 25s ease infinite }
+  #slideRadio5:checked ~ #slideshow > .container { animation: slideE 25s ease infinite }
   .slide {
     float: left;
     width: 700px;
@@ -20,30 +30,109 @@
     text-align: center;
   }
   .slide:nth-child(odd) {
-    background: #D93B65;
+    background: #2f2f2f;
+    color: white;
   }
   .slide:nth-child(even) {
-    background: #037E8C;
+    background: #c7c7c7;
   }
-  @keyframes slide {
-    16% {margin-left: 0px;}
-    20% {margin-left: -700px;}
-    36% {margin-left: -700px;}
-    40% {margin-left: -1400px;}
-    56% {margin-left: -1400px;}
-    60% {margin-left: -2100px;}
-    76% {margin-left: -2100px;}
-    80% {margin-left: -2800px;}
-    96% {margin-left: -2800px;}
-  }
-
+  @keyframes slideA {
+  0% { margin-left: 0px }
+  16% { margin-left: 0px }
+  20% { margin-left: -700px }
+  36% { margin-left: -700px }
+  40% { margin-left: -1400px }
+  56% { margin-left: -1400px }
+  60% { margin-left: -2100px }
+  76% { margin-left: -2100px }
+  80% { margin-left: -2800px }
+  96% { margin-left: -2800px }
+}
+@keyframes slideB {
+  0% { margin-left: -700px }
+  16% { margin-left: -700px }
+  20% { margin-left: -1400px }
+  36% { margin-left: -1400px }
+  40% { margin-left: -2100px }
+  56% { margin-left: -2100px }
+  60% { margin-left: -2800px }
+  76% { margin-left: -2800px }
+  80% { margin-left: 0px }
+  96% { margin-left: 0px }
+}
+@keyframes slideC {
+  0% { margin-left: -1400px }
+  16% { margin-left: -1400px }
+  20% { margin-left: -2100px }
+  36% { margin-left: -2100px }
+  40% { margin-left: -2800px }
+  56% { margin-left: -2800px }
+  60% { margin-left: 0px }
+  76% { margin-left: 0px }
+  80% { margin-left: -700px }
+  96% { margin-left: -700px }
+}
+@keyframes slideD {
+  0% { margin-left: -2100px }
+  16% { margin-left: -2100px }
+  20% { margin-left: -2800px }
+  36% { margin-left: -2800px }
+  40% { margin-left: 0px }
+  56% { margin-left: 0px }
+  60% { margin-left: -700px }
+  76% { margin-left: -700px }
+  80% { margin-left: -1400px }
+  96% { margin-left: -1400px }
+}
+@keyframes slideE {
+  0% { margin-left: -2800px }
+  16% { margin-left: -2800px }
+  20% { margin-left: 0px }
+  36% { margin-left: 0px }
+  40% { margin-left: -700px }
+  56% { margin-left: -700px }
+  60% { margin-left: -1400px }
+  76% { margin-left: -1400px }
+  80% { margin-left: -2100px }
+  96% { margin-left: -2100px }
+}
+.radioContainer > label {
+  border-radius: 10px;
+  color: white;
+  margin: 10px 5px;
+  background: #b9b9b9;
+  padding: 1px 6px;
+  float: left;
+  cursor: pointer;
+}
+.radioContainer > label:hover {
+  background: #393939;
+}
+.radioContainer {
+  width: 150px;
+  margin: 0 auto;
+}
 </style>
-<div id="slideshow">
-  <div class="container">
-    <div class="slide">1</div>
-    <div class="slide">2</div>
-    <div class="slide">3</div>
-    <div class="slide">4</div>
-    <div class="slide">5</div>
+<div id="main">
+  <input type="radio" name="slide" id="slideRadio1" checked="checked">
+  <input type="radio" name="slide" id="slideRadio2">
+  <input type="radio" name="slide" id="slideRadio3">
+  <input type="radio" name="slide" id="slideRadio4">
+  <input type="radio" name="slide" id="slideRadio5">
+  <div id="slideshow">
+    <div class="container">
+      <div class="slide">1</div>
+      <div class="slide">2</div>
+      <div class="slide">3</div>
+      <div class="slide">4</div>
+      <div class="slide">5</div>
+    </div>
+  </div>
+  <div class="radioContainer">
+    <label id="slideLabel1" for="slideRadio1">1</label>
+    <label id="slideLabel2" for="slideRadio2">2</label>
+    <label id="slideLabel3" for="slideRadio3">3</label>
+    <label id="slideLabel4" for="slideRadio4">4</label>
+    <label id="slideLabel5" for="slideRadio5">5</label>
   </div>
 </div>
