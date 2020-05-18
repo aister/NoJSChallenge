@@ -20,9 +20,45 @@
   #slideRadio3:checked ~ #slideshow > .container { animation: slideC 25s ease infinite }
   #slideRadio4:checked ~ #slideshow > .container { animation: slideD 25s ease infinite }
   #slideRadio5:checked ~ #slideshow > .container { animation: slideE 25s ease infinite }
+  #slideRadio1:checked ~ .radioContainer > #slideLabel1,
+  #slideRadio2:checked ~ .radioContainer > #slideLabel2,
+  #slideRadio3:checked ~ .radioContainer > #slideLabel3,
+  #slideRadio4:checked ~ .radioContainer > #slideLabel4,
+  #slideRadio5:checked ~ .radioContainer > #slideLabel5 { 
+    animation: radioA 25s ease infinite; 
+  }
+  #slideRadio1:checked ~ .radioContainer > #slideLabel2,
+  #slideRadio2:checked ~ .radioContainer > #slideLabel3,
+  #slideRadio3:checked ~ .radioContainer > #slideLabel4,
+  #slideRadio4:checked ~ .radioContainer > #slideLabel5,
+  #slideRadio5:checked ~ .radioContainer > #slideLabel1 { 
+    animation: radioB 25s ease infinite; 
+  }
+  #slideRadio1:checked ~ .radioContainer > #slideLabel3,
+  #slideRadio2:checked ~ .radioContainer > #slideLabel4,
+  #slideRadio3:checked ~ .radioContainer > #slideLabel5,
+  #slideRadio4:checked ~ .radioContainer > #slideLabel1,
+  #slideRadio5:checked ~ .radioContainer > #slideLabel2 { 
+    animation: radioC 25s ease infinite; 
+  }
+  #slideRadio1:checked ~ .radioContainer > #slideLabel4,
+  #slideRadio2:checked ~ .radioContainer > #slideLabel5,
+  #slideRadio3:checked ~ .radioContainer > #slideLabel1,
+  #slideRadio4:checked ~ .radioContainer > #slideLabel2,
+  #slideRadio5:checked ~ .radioContainer > #slideLabel3 { 
+    animation: radioD 25s ease infinite; 
+  }
+  #slideRadio1:checked ~ .radioContainer > #slideLabel5,
+  #slideRadio2:checked ~ .radioContainer > #slideLabel1,
+  #slideRadio3:checked ~ .radioContainer > #slideLabel2,
+  #slideRadio4:checked ~ .radioContainer > #slideLabel3,
+  #slideRadio5:checked ~ .radioContainer > #slideLabel4 { 
+    animation: radioE 25s ease infinite; 
+  }
   .slide {
     float: left;
     width: 700px;
+    color: white;
     padding: 200px 10px;
     box-sizing: border-box;
     font-size: 20px;
@@ -36,81 +72,115 @@
     background: #c7c7c7;
   }
   @keyframes slideA {
-  0% { margin-left: 0px }
-  16% { margin-left: 0px }
-  20% { margin-left: -700px }
-  36% { margin-left: -700px }
-  40% { margin-left: -1400px }
-  56% { margin-left: -1400px }
-  60% { margin-left: -2100px }
-  76% { margin-left: -2100px }
-  80% { margin-left: -2800px }
-  96% { margin-left: -2800px }
-}
-@keyframes slideB {
-  0% { margin-left: -700px }
-  16% { margin-left: -700px }
-  20% { margin-left: -1400px }
-  36% { margin-left: -1400px }
-  40% { margin-left: -2100px }
-  56% { margin-left: -2100px }
-  60% { margin-left: -2800px }
-  76% { margin-left: -2800px }
-  80% { margin-left: 0px }
-  96% { margin-left: 0px }
-}
-@keyframes slideC {
-  0% { margin-left: -1400px }
-  16% { margin-left: -1400px }
-  20% { margin-left: -2100px }
-  36% { margin-left: -2100px }
-  40% { margin-left: -2800px }
-  56% { margin-left: -2800px }
-  60% { margin-left: 0px }
-  76% { margin-left: 0px }
-  80% { margin-left: -700px }
-  96% { margin-left: -700px }
-}
-@keyframes slideD {
-  0% { margin-left: -2100px }
-  16% { margin-left: -2100px }
-  20% { margin-left: -2800px }
-  36% { margin-left: -2800px }
-  40% { margin-left: 0px }
-  56% { margin-left: 0px }
-  60% { margin-left: -700px }
-  76% { margin-left: -700px }
-  80% { margin-left: -1400px }
-  96% { margin-left: -1400px }
-}
-@keyframes slideE {
-  0% { margin-left: -2800px }
-  16% { margin-left: -2800px }
-  20% { margin-left: 0px }
-  36% { margin-left: 0px }
-  40% { margin-left: -700px }
-  56% { margin-left: -700px }
-  60% { margin-left: -1400px }
-  76% { margin-left: -1400px }
-  80% { margin-left: -2100px }
-  96% { margin-left: -2100px }
-}
-.radioContainer > label {
-  border-radius: 10px;
-  color: white;
-  margin: 10px 5px;
-  background: #b9b9b9;
-  padding: 1px 6px;
-  float: left;
-  cursor: pointer;
-}
-.radioContainer > label:hover {
-  background: #393939;
-}
-.radioContainer {
-  width: 150px;
-  margin: 0 auto;
-}
+    0% { margin-left: 0px }
+    16% { margin-left: 0px }
+    20% { margin-left: -700px }
+    36% { margin-left: -700px }
+    40% { margin-left: -1400px }
+    56% { margin-left: -1400px }
+    60% { margin-left: -2100px }
+    76% { margin-left: -2100px }
+    80% { margin-left: -2800px }
+    96% { margin-left: -2800px }
+  }
+  @keyframes slideB {
+    0% { margin-left: -700px }
+    16% { margin-left: -700px }
+    20% { margin-left: -1400px }
+    36% { margin-left: -1400px }
+    40% { margin-left: -2100px }
+    56% { margin-left: -2100px }
+    60% { margin-left: -2800px }
+    76% { margin-left: -2800px }
+    80% { margin-left: 0px }
+    96% { margin-left: 0px }
+  }
+  @keyframes slideC {
+    0% { margin-left: -1400px }
+    16% { margin-left: -1400px }
+    20% { margin-left: -2100px }
+    36% { margin-left: -2100px }
+    40% { margin-left: -2800px }
+    56% { margin-left: -2800px }
+    60% { margin-left: 0px }
+    76% { margin-left: 0px }
+    80% { margin-left: -700px }
+    96% { margin-left: -700px }
+  }
+  @keyframes slideD {
+    0% { margin-left: -2100px }
+    16% { margin-left: -2100px }
+    20% { margin-left: -2800px }
+    36% { margin-left: -2800px }
+    40% { margin-left: 0px }
+    56% { margin-left: 0px }
+    60% { margin-left: -700px }
+    76% { margin-left: -700px }
+    80% { margin-left: -1400px }
+    96% { margin-left: -1400px }
+  }
+  @keyframes slideE {
+    0% { margin-left: -2800px }
+    16% { margin-left: -2800px }
+    20% { margin-left: 0px }
+    36% { margin-left: 0px }
+    40% { margin-left: -700px }
+    56% { margin-left: -700px }
+    60% { margin-left: -1400px }
+    76% { margin-left: -1400px }
+    80% { margin-left: -2100px }
+    96% { margin-left: -2100px }
+  }
+  @keyframes radioA {
+    0% { padding: 2px 20px; background: #797979; }
+    16% { padding: 2px 20px; background: #797979; }
+    20% { padding: 2px 10px; background: #b9b9b9; }
+    96% { padding: 2px 10px; background: #b9b9b9; }
+    100% { padding: 2px 20px; background: #797979; }
+  }
+  @keyframes radioB {
+    0% { padding: 2px 10px; background: #b9b9b9; }
+    16% { padding: 2px 10px; background: #b9b9b9; }
+    20% { padding: 2px 20px; background: #797979; }
+    36% { padding: 2px 20px; background: #797979; }
+    40% { padding: 2px 10px; background: #b9b9b9; }
+  }
+  @keyframes radioC {
+    0% { padding: 2px 10px; background: #b9b9b9; }
+    36% { padding: 2px 10px; background: #b9b9b9; }
+    40% { padding: 2px 20px; background: #797979; }
+    56% { padding: 2px 20px; background: #797979; }
+    60% { padding: 2px 10px; background: #b9b9b9; }
+  }
+  @keyframes radioD {
+    0% { padding: 2px 10px; background: #b9b9b9; }
+    56% { padding: 2px 10px; background: #b9b9b9; }
+    60% { padding: 2px 20px; background: #797979; }
+    76% { padding: 2px 20px; background: #797979; }
+    80% { padding: 2px 10px; background: #b9b9b9; }
+  }
+  @keyframes radioE {
+    0% { padding: 2px 10px; background: #b9b9b9; }
+    76% { padding: 2px 10px; background: #b9b9b9; }
+    80% { padding: 2px 20px; background: #797979; }
+    96% { padding: 2px 20px; background: #797979; }
+    100% { padding: 2px 10px; background: #b9b9b9; }
+  }
+  .radioContainer > label {
+    animation: none;
+    border-radius: 10px;
+    color: white;
+    margin: 10px 5px;
+    float: left;
+    cursor: pointer;
+  }
+  .radioContainer > label:hover {
+    background: #393939;
+  }
+  .radioContainer {
+    width: 170px;
+    margin: 0 auto;
+  }
 </style>
 <div id="main">
   <input type="radio" name="slide" id="slideRadio1" checked="checked">
@@ -128,10 +198,10 @@
     </div>
   </div>
   <div class="radioContainer">
-    <label id="slideLabel1" for="slideRadio1">1</label>
-    <label id="slideLabel2" for="slideRadio2">2</label>
-    <label id="slideLabel3" for="slideRadio3">3</label>
-    <label id="slideLabel4" for="slideRadio4">4</label>
-    <label id="slideLabel5" for="slideRadio5">5</label>
+    <label id="slideLabel1" for="slideRadio1"></label>
+    <label id="slideLabel2" for="slideRadio2"></label>
+    <label id="slideLabel3" for="slideRadio3"></label>
+    <label id="slideLabel4" for="slideRadio4"></label>
+    <label id="slideLabel5" for="slideRadio5"></label>
   </div>
 </div>
